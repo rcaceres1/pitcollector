@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Pit List</h1>
+
+{% for pit in pits %}
+  <div class="card">
+    <a href="{% url 'detail' pit.id %}">
+    <div class="card-content">
+      <span class="card-title">{{ pit.name }}</span>
+      <p>Type: {{ pit.kind }}</p>
+      {% if pit.age > 0 %}
+        <p>Age: {{ pit.age }}</p>
+      {% else %}
+        <p>Age: Puppy</p>
+      {% endif %}
+      <p>Description: {{ pit.description }}</p>
+    </div>
+    </a>
+  </div>
+{% endfor %}
+
+{% endblock %}

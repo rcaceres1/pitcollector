@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Pit Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ pit.name }}</span>
+    <p>Kind: {{ pit.kind }}</p>
+    {% if pit.age > 0 %}
+      <p>Age: {{ pit.age }}</p>
+    {% else %}
+      <p>Age: Puppers</p>
+    {% endif %}
+    <p>Description: {{ pit.description }}</p>
+    <div class="card-action">
+        <a href="{% url 'pits_update' pit.id %}">Edit</a>
+        <a href="{% url 'pits_delete' pit.id %}">Delete</a>
+      </div>
+  </div>
+</div>
+
+{% endblock %}
