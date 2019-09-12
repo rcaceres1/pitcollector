@@ -8,7 +8,7 @@ import uuid
 from .models import Pit, Toy, Photo
 from .forms import FeedingForm
 
-S3_BASE_URL = 'https://apigateway.us-east-2.amazonaws.com/'
+S3_BASE_URL = 'https://s3-us-east-2.amazonaws.com/'
 BUCKET = 'rc-cat-collector'
 
 # Create your views here.
